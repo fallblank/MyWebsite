@@ -15,9 +15,18 @@ Including another URLconf
 """
 from django.conf.urls import url
 from django.contrib import admin
-from welcome import views as welcome_views 
+from welcome import views as welcome_views
+
+#On test branch 
+from ModuleTest import views as module_test_views
 
 urlpatterns = [
 	url(r'^$',welcome_views.home,name='home'),
     url(r'^admin/', admin.site.urls),
+
+#On test branch
+	url(r'^test/string$',module_test_views.string_test,name='test_string'),
+	url(r'^test/for$',module_test_views.for_test,name='test_for'),
+	url(r'^test/dict$',module_test_views.dict_test,name='test_dict'),
+	url(r'^test/if$',module_test_views.if_test,name='test_if'),
 ]

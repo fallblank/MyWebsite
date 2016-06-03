@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+</head>
+<body>
+<!-- 引入变量 -->
+{{string}}
+
+<!-- for迭代 -->
+	<p>系统环境变量如下:</p>
+	{%for i in EnvironmentList%}
+	<li>{{i}}</li>
+	{%endfor%}
+
+<!-- if条件判断 -->
+{%for item in List%}
+{%if forloop.counter < 10%}{{item}},<br>{%endif%}
+{%endfor%}
+
+<!-- 显示字典 -->
+<div>author</div>
+<p>作者:{{info.author}}  Email:{{info.email}}</p>
+
+<div>当前网址：</div>
+<p>{%url 'test_if' %}</p>
+<p>{%request.url%}</p>
+
+</body>
+</html>
